@@ -21,9 +21,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int currentPageIndex = 0;
 
+class _MyHomePageState extends State<MyHomePage> {
+  int currentPageIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           Placeholder(),
-          Placeholder()
+          Placeholder(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
