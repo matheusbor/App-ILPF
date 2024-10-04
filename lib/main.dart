@@ -1,4 +1,5 @@
 
+import 'package:app_ilpf/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,19 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Placeholder(),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.edit), label: "Cadastro"),
-          NavigationDestination(icon: Icon(Icons.map_outlined), label: "Mapa"),
-          NavigationDestination(icon: Icon(Icons.settings), label: "Configurações"),
-        ],
-        selectedIndex: currentPageIndex,
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-      ),
+      bottomNavigationBar: MaterialNavigationBar(),
     );
   }
 }
