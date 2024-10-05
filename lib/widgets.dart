@@ -3,12 +3,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MaterialNavigationBar extends StatefulWidget{
+  int pageIndex;
+  MaterialNavigationBar(pageIndex, {super.key}):
+        pageIndex = pageIndex;
   @override
   State<MaterialNavigationBar> createState() => _MaterialNavigationBarState();
 }
 
 class _MaterialNavigationBarState extends State<MaterialNavigationBar> {
-  int currentPageIndex = 0;
+  late int currentPageIndex ;
+
+  @override
+  void initState(){
+    super.initState();
+    currentPageIndex = widget.pageIndex;
+  }
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
