@@ -1,4 +1,6 @@
 
+import 'package:app_ilpf/screens/homepage.dart';
+import 'package:app_ilpf/screens/splash.dart';
 import 'package:app_ilpf/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,25 +19,21 @@ class MyApp extends StatelessWidget{
 
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+class MyHomePage extends StatelessWidget{
 
 
-class _MyHomePageState extends State<MyHomePage> {
-  int currentPageIndex = 1;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Column(
-        children: [
-          Placeholder(),
-          Placeholder(),
-        ],
-      ),
-      bottomNavigationBar: MaterialNavigationBar(),
-    );
+    return FutureBuilder(
+        future: Future.delayed(Duration(seconds: 2)),
+        builder:
+            (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return SplashScreen();
+          } else {
+            return HomePageScreen();
+          }
+            },
+            );
   }
 }

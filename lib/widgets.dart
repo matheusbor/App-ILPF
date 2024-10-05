@@ -1,3 +1,4 @@
+import 'package:app_ilpf/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,8 @@ class _MaterialNavigationBarState extends State<MaterialNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
+      backgroundColor: MyColors.greenLight,
+      indicatorColor: MyColors.greenLightActive,
       destinations: [
         NavigationDestination(icon: Icon(Icons.edit), label: "Cadastro"),
         NavigationDestination(icon: Icon(Icons.map_outlined), label: "Mapa"),
