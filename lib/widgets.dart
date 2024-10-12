@@ -37,3 +37,151 @@ class _MaterialNavigationBarState extends State<MaterialNavigationBar> {
     );
   }
 }
+
+class CultureCard extends StatefulWidget{
+  @override
+  State<CultureCard> createState() => _CultureCardState();
+}
+
+class _CultureCardState extends State<CultureCard> {
+  int copaNavigation = 0;
+  String copaTitle = "Copa";
+
+
+  @override
+  Widget build(BuildContext context) {
+    if (copaNavigation < 0){
+      copaNavigation =5;
+    }//bug: por que ele consegue voltar do 0 pro 5-porque não tinhasetstate no direito antes?
+    if(copaNavigation >5){
+      copaNavigation = 0;
+    }
+    switch(copaNavigation){
+      case 0:
+        copaTitle = "Copa Cilíndrica";
+        break;
+      case 1:
+        copaTitle = "Copa Esférica";
+        break;
+      case 2:
+        copaTitle = "Copa Lentiforme";
+        break;
+      case 3:
+        copaTitle = "Copa Elíptica";
+        break;
+      case 4:
+        copaTitle = "Copa Cilíndrica ";
+        break;
+      case 5:
+        copaTitle = "Copa Esférica";
+        break;
+    }
+    return Stack(
+      children: [
+        Positioned(
+          top: 25,
+          child: IconButton(onPressed: (){
+            setState(() {
+              copaNavigation -= 1;
+            });
+          },
+              icon: Icon(Icons.chevron_left, color: Colors.black,)),
+        ),
+        Row(
+            children:
+            [
+
+              SizedBox(width: 40,),
+               Expanded(
+                child: Card.outlined(
+
+                  child: Container(
+                    margin: EdgeInsets.only(left: 16, right: 16, bottom: 17),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 29,),
+                        Text(copaTitle,
+                          style: Theme.of(context).textTheme.titleLarge,),
+                        //Text("$copaNavigation"),
+                        SizedBox(height: 36,),
+                        Row(
+
+                          children: [
+                            Text("Área da sombra",
+                              style: Theme.of(context).textTheme.labelLarge,),
+
+                            Spacer(),
+                            Text("m²",
+                              style: Theme.of(context).textTheme.bodyMedium,),
+                          ],
+                        ),
+                        Divider(height: 1,),
+                        SizedBox(height: 19,),
+                        Row(
+                          children: [
+                            Text("Largura da sombra",
+                              style: Theme.of(context).textTheme.labelLarge,),
+                            Spacer(),
+                            Text("m",
+                              style: Theme.of(context).textTheme.bodyMedium,),
+                          ],
+                        ),
+                        Divider(height: 1,),
+                        SizedBox(height: 17,),
+                        Row(
+                          children: [
+                            Text("Comprimento da sombra",
+                              style: Theme.of(context).textTheme.labelLarge,),
+                            Spacer(),
+                            Text("m",
+                              style: Theme.of(context).textTheme.bodyMedium,),
+                          ],
+                        ),
+                        Divider(height: 1,),
+                        SizedBox(height: 17,),
+                        Row(
+                          children: [
+                            Text("Deslocamento da sombra",
+                              style: Theme.of(context).textTheme.labelLarge,),
+                            Spacer(),
+                            Text("m",
+                              style: Theme.of(context).textTheme.bodyMedium,),
+                          ],
+                        ),
+                        Divider(height: 1,),
+                        SizedBox(height: 19,),
+                        Row(
+                          children: [
+                            Text("Direção da sombra (azimute)",
+                              style: Theme.of(context).textTheme.labelLarge,),
+                            Spacer(),
+                            Text("º",
+                              style: Theme.of(context).textTheme.bodyMedium,),
+                          ],
+                        ),
+                        Divider(height: 1,),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 40,),
+
+            ]
+        ),
+        Positioned(
+          right: 0,
+          top: 25,
+          child: IconButton(onPressed: (){
+            setState(() {
+              copaNavigation += 1;
+          });
+
+          },
+              icon: Icon(Icons.chevron_right, color: Colors.black,)),
+        ),
+      ]
+    );
+  }
+}
