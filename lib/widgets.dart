@@ -185,3 +185,88 @@ class _CultureCardState extends State<CultureCard> {
     );
   }
 }
+
+class  modalSheet extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      margin: EdgeInsets.only(right: 24, left: 24),
+      child: Column(
+        children: [
+          Text("Marque um ponto na tela para começar o cadastro",
+          style: Theme.of(context).textTheme.titleLarge),
+
+          SizedBox(height: 19,),
+          Divider(height: 1,),
+          Container(
+            // decoration: BoxDecoration(
+            //   border: Border.all(),
+            // ),
+            child: Row(
+              children: [
+                Image.asset("app_assets/marker.png"),
+                SizedBox(width: 16,),
+                Text("Ponto 1"),
+                Spacer(),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Latitude"),
+                    Text("Longitude"),
+                  ],
+                ),
+                SizedBox(width: 9,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("000000"),
+                    Text("000000"),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Divider(height: 1,),
+          Divider(height: 1,),
+          Container(
+            // decoration: BoxDecoration(
+            //   border: Border.all(),
+            // ),
+            child: Row(
+              children: [
+                Image.asset("app_assets/marker.png"),
+                SizedBox(width: 16,),
+                Text("Ponto 2"),
+                Spacer(),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Latitude"),
+                    Text("Longitude"),
+                  ],
+                ),
+                SizedBox(width: 9,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("000000"),
+                    Text("000000"),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Divider(height: 1,),
+
+
+
+        ],
+      ),
+    );
+  }
+
+}

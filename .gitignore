@@ -33,6 +33,8 @@ migrate_working_dir/
 linux/
 windows/
 macos/
+libpackage/
+assetpackage/
 
 # Symbolication related
 app.*.symbols
